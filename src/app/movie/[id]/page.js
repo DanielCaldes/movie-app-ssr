@@ -41,7 +41,7 @@ export default function MovieDetail() {
   
     return (
       <div>
-        <Header />
+        <Header/>
         <main>
           <div className="movie-detail-container">
             {movie.backdrop_path && (
@@ -71,7 +71,7 @@ export default function MovieDetail() {
             </div>
           </div>
         </main>
-        <Footer />
+        <Footer/>
       </div>
     );
   }

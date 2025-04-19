@@ -1,20 +1,20 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
-import { useSearchParams } from 'next/navigation';
-import SearchBar from '../components/SearchBar';  // Asegúrate de que la ruta sea correcta
-import MovieList from '../components/MovieList';  // Asegúrate de que la ruta sea correcta
-import Header from '../components/Header';  // Asegúrate de que la ruta sea correcta
-import Footer from '../components/Footer';  // Asegúrate de que la ruta sea correcta
+import { useSearchParams } from 'next/navigation'; 
+import SearchBar from '../components/SearchBar';  
+import MovieList from '../components/MovieList';  
+import Header from '../components/Header';  
+import Footer from '../components/Footer';  
 
 export default function Search() {
   const searchParams = useSearchParams();
   const queryFromUrl = searchParams.get('q') || '';
   const [query, setQuery] = useState(queryFromUrl);
   const [results, setResults] = useState([]);
+  const router = useRouter();
 
-  // Fetch movies when query changes
   useEffect(() => {
     if (query.trim()) {
       const fetchMovies = async () => {
@@ -44,11 +44,15 @@ export default function Search() {
 
   return (
     <div>
-      <Header />
+      <Header/>
       <main>
         <h1>Search Films</h1>
+        
         <SearchBar query={query} setQuery={setQuery} onSearch={handleSearch} />
-        <MovieList movies={results} />
+        
+        <Suspense fallback={<p>Cargando resultados...</p>}>
+          <MovieList movies={results} />
+        </Suspense>
       </main>
       <Footer />
     </div>

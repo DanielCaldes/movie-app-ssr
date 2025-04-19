@@ -5,6 +5,7 @@ import React from 'react';
 export default function SearchBar({ query, setQuery, onSearch }) {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
+      e.preventDefault();
       onSearch();
     }
   };
