@@ -39,7 +39,7 @@ Puedes probar la aplicación desplegada en Vercel aquí:
 
 ## Estructura del proyecto
 ```bash
-📁 public/
+📁 public/                        // Imágenes
 📁 src/
 ├── 📁 app/
 │   ├── 📁 components/
