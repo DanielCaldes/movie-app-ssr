@@ -37,17 +37,27 @@ Puedes probar la aplicación desplegada en Vercel aquí:
    npm run dev
    ```
 
+### Ejecutar tests
+```bash
+    npm test
+```
+
 ## Estructura del proyecto
 ```bash
 📁 public/                        // Imágenes
 📁 src/
 ├── 📁 app/
 │   ├── 📁 components/
-│   │   ├── 📄 Footer.jsx         // Pie de página de la aplicación
-│   │   ├── 📄 Header.jsx         // Encabezado con navegación hacia búsqueda y la página principal
-│   │   ├── 📄 MovieCard.jsx      // Tarjeta de presentación de una película
-│   │   ├── 📄 MovieList.jsx      // Componente para mostrar una lista de películas
-│   │   └── 📄 SearchBar.jsx      // Barra de búsqueda para encontrar películas
+│   │   ├── 📄 Footer.jsx             // Pie de página de la aplicación
+│   │   ├── 📄 Footer.test.jsx        // Tests para footer
+│   │   ├── 📄 Header.jsx             // Encabezado con navegación hacia búsqueda y la página principal
+│   │   ├── 📄 Header.test.jsx        // Tests para header
+│   │   ├── 📄 MovieCard.jsx          // Tarjeta de presentación de una película
+│   │   ├── 📄 MovieCard.test.jsx     // Tests para movie card
+│   │   ├── 📄 MovieList.jsx          // Componente para mostrar una lista de películas
+│   │   ├── 📄 MovieList.test.jsx     // Tests para movie list
+│   │   ├── 📄 SearchBar.jsx          // Barra de búsqueda para encontrar películas
+│   │   └── 📄 SearchBar.test.jsx     // Tests para search bar
 │   ├── 📁 movie/
 │   │   └── 📁 [id]/
 │   │       └── 📄 page.js        // Página de detalles de una película específica
@@ -58,4 +68,7 @@ Puedes probar la aplicación desplegada en Vercel aquí:
 │   └── 📄 page.js                // Página de inicio
 📄 .env.local                     // Archivo de configuración local con API_KEY
 📄 .env.local.example             // Archivo de ejemplo para configuración del entorno local
+📄 jest-preset.js                 // Configuración predeterminada proporcionada por Jest
+📄 jest.config.js                 // Archivo de configuración principal para Jest
+📄 jest.setup.js                  // Archivo de configuración adicional para el entorno de pruebas antes de ejecutar Jest
 ```
