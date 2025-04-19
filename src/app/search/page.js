@@ -5,8 +5,6 @@ import { useRouter } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import SearchBar from '../components/SearchBar';
 import MovieList from '../components/MovieList';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 function SearchContent() {
   const searchParams = useSearchParams();
@@ -44,13 +42,11 @@ function SearchContent() {
 
   return (
     <div>
-      <Header />
       <main>
         <h1>Search Films</h1>
         <SearchBar query={query} setQuery={setQuery} onSearch={handleSearch} />
         <MovieList movies={results} />
       </main>
-      <Footer />
     </div>
   );
 }

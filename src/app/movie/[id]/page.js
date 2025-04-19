@@ -3,8 +3,6 @@
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 
 export default function MovieDetail() {
     const { id } = useParams();
@@ -41,7 +39,6 @@ export default function MovieDetail() {
   
     return (
       <div>
-        <Header/>
         <main>
           <div className="movie-detail-container">
             {movie.backdrop_path && (
@@ -71,7 +68,6 @@ export default function MovieDetail() {
             </div>
           </div>
         </main>
-        <Footer/>
       </div>
     );
   }

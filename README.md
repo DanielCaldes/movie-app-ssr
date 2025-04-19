@@ -14,7 +14,7 @@ Este proyecto es una aplicación web construida con React y Next.js, que permite
 ![Detalles de película](./readme-assets/MovieDetails.png)
 ![Búsqueda de película](./readme-assets/Search.png)
 
-## **Probarlo online**
+## Demostración
 
 Puedes probar la aplicación desplegada en Vercel aquí:
 [Movie App SSR](https://movie-app-ssr.vercel.app/)
@@ -55,8 +55,7 @@ Puedes probar la aplicación desplegada en Vercel aquí:
 │   │   └── 📄 page.js            // Página de resultados de búsqueda
 │   ├── 📄 globals.css            // Estilos globales de la aplicación
 │   ├── 📄 layout.js              // Layout principal de la aplicación
-│   ├── 📄 page.js                // Página de inicio
-│   └── 📄 page.module.css        // Estilos específicos para la página principal
+│   └── 📄 page.js                // Página de inicio
 📄 .env.local                     // Archivo de configuración local con API_KEY
 📄 .env.local.example             // Archivo de ejemplo para configuración del entorno local
 ```

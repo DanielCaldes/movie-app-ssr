@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import SearchBar from './components/SearchBar';
 import MovieList from './components/MovieList';
 
@@ -28,13 +26,11 @@ export default function Home() {
 
   return (
     <div className="movie-cards-container">
-      <Header />
       <main>
         <h1>Popular Films</h1>
         <SearchBar query={searchQuery} setQuery={setSearchQuery} onSearch={handleSearch} />
         <MovieList movies={movies} />
       </main>
-      <Footer />
     </div>
   );
 }
