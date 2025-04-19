@@ -3,14 +3,20 @@
 import Image from 'next/image';
 
 export default function MovieCard({ movie }) {
-    return (
-      <div className="movie-card">
-        <img
-        src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+  const imageSrc = movie.poster_path
+    ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
+    : '/no-image.jpg';  
+  
+  return (
+    <div className="movie-card">
+      <Image
+        src={imageSrc}
         alt={movie.title}
-        onError={(e) => e.target.src = '/no-image.jpg'}  // Si falla la carga de la imagen, se carga la imagen de respaldo
+        width={200}
+        height={300}
+        unoptimized
       />
-        <h3>{movie.title}</h3>
-      </div>
+      <h3>{movie.title}</h3>
+    </div>
     )
   }
