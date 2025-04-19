@@ -2,13 +2,13 @@
 
 import { useState, useEffect, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
-import { useSearchParams } from 'next/navigation'; 
-import SearchBar from '../components/SearchBar';  
-import MovieList from '../components/MovieList';  
-import Header from '../components/Header';  
-import Footer from '../components/Footer';  
+import { useSearchParams } from 'next/navigation';
+import SearchBar from '../components/SearchBar';
+import MovieList from '../components/MovieList';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
-export default function Search() {
+function SearchContent() {
   const searchParams = useSearchParams();
   const queryFromUrl = searchParams.get('q') || '';
   const [query, setQuery] = useState(queryFromUrl);
@@ -44,17 +44,21 @@ export default function Search() {
 
   return (
     <div>
-      <Header/>
+      <Header />
       <main>
         <h1>Search Films</h1>
-        
         <SearchBar query={query} setQuery={setQuery} onSearch={handleSearch} />
-        
-        <Suspense fallback={<p>Cargando resultados...</p>}>
-          <MovieList movies={results} />
-        </Suspense>
+        <MovieList movies={results} />
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<p>Cargando resultados...</p>}>
+      <SearchContent />
+    </Suspense>
   );
 }
