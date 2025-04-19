@@ -38,6 +38,7 @@ Puedes probar la aplicación desplegada en Vercel aquí:
    ```
 
 ## Estructura del proyecto
+```bash
 📁 public/
 📁 src/
 ├── 📁 app/
@@ -58,3 +59,4 @@ Puedes probar la aplicación desplegada en Vercel aquí:
 │   └── 📄 page.module.css        // Estilos específicos para la página principal
 📄 .env.local                     // Archivo de configuración local con API_KEY
 📄 .env.local.example             // Archivo de ejemplo para configuración del entorno local
+```
